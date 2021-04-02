@@ -6,7 +6,7 @@ def q1
 
   # 以下に回答を記載
   names << "斉藤"
-  puts names
+  p names
 end
 
 def q2
@@ -14,8 +14,8 @@ def q2
   array2 = ["bird", "bat", "tiger"]
 
   # 以下に回答を記載
-  array1 << array2
-  puts array1
+  p array1 + array2
+ 
 end
 
 def q3

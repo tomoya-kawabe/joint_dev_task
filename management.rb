@@ -1,8 +1,8 @@
 # 課題の回答は task.rb をご利用下さい。
 # 回答の出力を確認される際は，「ruby main.rb」をターミナルから実行して下さい。
 
-require './task'
-require './message'
+require "./task"
+require "./message"
 
 class Management
   TASK_RANGE = (1..20).freeze
@@ -45,7 +45,7 @@ class Management
   def output_answer
     @selected_numbers.each do |number|
       Message.question_number(number)
-      eval("q#{number}", binding, 'task.rb')
+      eval("q#{number}", binding, "task.rb")
     end
   end
 end
