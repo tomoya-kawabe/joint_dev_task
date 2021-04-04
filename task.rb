@@ -108,16 +108,17 @@ def q11
   # 以下に回答を記載
   
   #配列の1次元化
-  flatten_sports = sports.flatten
+  sports.flatten!
 
   #配列から重複要素の削除
-  flatten_sports.uniq!
+  sports.uniq!
 
   #each.with_indexで要素のリストアップ
   puts "ユーザーの趣味一覧"
-  flatten_sports.each.with_index(1){
-    |sport, i|
+  sports.each.with_index(1){|sport, i|
+
     puts "No#{i} #{sport}"
+
   }
 
 end
@@ -135,8 +136,8 @@ def q13
   update_data = { age: 32, address: "沖縄" }
 
   # 以下に回答を記載
-  merged_data = user_data.merge(update_data)
-  p merged_data
+  user_data.merge!(update_data)
+  p user_data
 
 end
 
@@ -154,6 +155,17 @@ def q15
   data2 = { name: "yamada", hobby: "baseball", role: "normal" }
 
   # 以下に回答を記載
+  if data1.include?(:age)
+    puts "OK"
+  else 
+    puts "NG"
+  end
+  
+  if data2.include?(:age)
+    puts "OK"
+  else 
+    puts "NG"
+  end
 
 end
 
@@ -166,6 +178,9 @@ def q16
   ]
 
   # 以下に回答を記載
+  users.each {|user|
+    puts "私の名前は#{user[:name]}です。年齢は#{user[:age]}歳です。"
+  }
 
 end
 
