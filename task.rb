@@ -266,16 +266,23 @@ class Zoo
   end
 
   def info_entry_fee(user)
+
+    #user.ageに応じてdecide_entry_feeに値を代入
+    decide_entry_fee = 
     case user.age
     when 0..5
-      puts "#{user.name}さんの入場料金は #{@entry_fee[:infant]} 円です。"
+      @entry_fee[:infant]
     when 6..12
-      puts "#{user.name}さんの入場料金は #{@entry_fee[:children]} 円です。"
+      @entry_fee[:children]
     when 13..64
-      puts "#{user.name}さんの入場料金は #{@entry_fee[:adult]} 円です。"
+      @entry_fee[:adult]
     when 65..120
-      puts "#{user.name}さんの入場料金は #{@entry_fee[:senior]} 円です。"
+      @entry_fee[:senior]
     end
+
+    #入場料金のアナウンス文の出力
+    puts "#{user.name}さんの入場料金は #{decide_entry_fee} 円です。"
+
   end
 end
 
